@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  airflow:
+    image: my-airflow:latest
+    volumes:
+      - ./airflow:/opt/airflow
+    ports:
+      - "8080:8080"
+    command: airflow standalone
