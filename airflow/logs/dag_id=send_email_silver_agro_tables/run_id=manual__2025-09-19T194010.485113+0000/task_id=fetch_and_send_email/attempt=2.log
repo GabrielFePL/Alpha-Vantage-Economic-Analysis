@@ -1,0 +1,5 @@
+{"timestamp":"2025-09-19T19:45:17.379056","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager"}
+{"timestamp":"2025-09-19T19:45:17.380004","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/send_email_silver_agro_tables.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-19T19:45:18.092355","level":"warning","event":"Using Connection.get_connection_from_secrets from `airflow.models` is deprecated.Please use `get` on Connection from sdk(`airflow.sdk.Connection`) instead","category":"DeprecationWarning","filename":"/home/airflow/.local/lib/python3.12/site-packages/airflow/models/connection.py","lineno":471,"logger":"py.warnings"}
+{"timestamp":"2025-09-19T19:45:18.135734","level":"info","event":"Connection Retrieved 'mssql_default'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-09-19T19:45:23.115645","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator"}
