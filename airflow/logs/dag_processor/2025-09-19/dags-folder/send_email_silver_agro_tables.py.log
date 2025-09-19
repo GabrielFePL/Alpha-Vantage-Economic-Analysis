@@ -1,0 +1,11 @@
+{"timestamp":"2025-09-19T19:39:45.602121","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/send_email_silver_agro_tables.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-19T19:40:20.187509","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/send_email_silver_agro_tables.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-19T19:40:51.653779","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/send_email_silver_agro_tables.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-19T19:41:23.292275","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/send_email_silver_agro_tables.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-19T19:41:54.759186","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/send_email_silver_agro_tables.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-19T19:42:36.867199","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/send_email_silver_agro_tables.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-19T19:43:11.585845","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/send_email_silver_agro_tables.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-19T19:43:42.920111","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/send_email_silver_agro_tables.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-19T19:44:14.477050","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/send_email_silver_agro_tables.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-19T19:44:45.506893","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/send_email_silver_agro_tables.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-19T19:45:16.580724","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/send_email_silver_agro_tables.py","logger":"airflow.models.dagbag.DagBag"}
