@@ -1,2 +1,4 @@
 .env
-Alpha-Vantage-Economic-Analysis\airflow\dags\__pycache__\__pycache__
+./airflow/dags/__pycache__
+./airflow/airflow.db
+./airflow/logs

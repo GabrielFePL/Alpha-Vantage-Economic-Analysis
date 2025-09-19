@@ -1,0 +1,13 @@
+{"timestamp":"2025-09-18T20:06:00.832992","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/dag_union_fuel_tables.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-18T20:06:36.547645","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/dag_union_fuel_tables.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-18T20:07:11.160606","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/dag_union_fuel_tables.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-18T20:07:43.437406","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/dag_union_fuel_tables.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-18T20:08:13.878381","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/dag_union_fuel_tables.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-18T20:08:45.096399","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/dag_union_fuel_tables.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-18T20:09:32.265088","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/dag_union_fuel_tables.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-18T20:10:06.721900","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/dag_union_fuel_tables.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-18T20:10:37.435034","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/dag_union_fuel_tables.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-18T20:11:07.964326","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/dag_union_fuel_tables.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-18T20:11:38.559762","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/dag_union_fuel_tables.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-18T20:12:10.224477","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/dag_union_fuel_tables.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-18T20:12:40.759773","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/dag_union_fuel_tables.py","logger":"airflow.models.dagbag.DagBag"}
