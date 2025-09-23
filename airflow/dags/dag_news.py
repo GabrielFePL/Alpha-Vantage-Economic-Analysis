@@ -53,6 +53,7 @@ with DAG(
             LEFT JOIN calendar 
                 ON calendar.year = YEAR(news.time_published)
             AND calendar.month = MONTH(news.time_published)
+            WHERE news.title IS NOT NULL
 
 
             SELECT * FROM gold_news;
