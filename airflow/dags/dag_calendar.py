@@ -28,15 +28,13 @@ with DAG(
             CREATE TABLE calendar
             (
                 date_id INT IDENTITY(1,1) PRIMARY KEY,
-                date date NOT NULL,
                 month INT NOT NULL,
                 year INT NOT NULL
 
             );
 
-            INSERT INTO calendar (date, month, year)
-            SELECT DISTINCT 
-                date as data, 
+            INSERT INTO calendar (month, year)
+            SELECT DISTINCT  
                 MONTH(date) AS month, 
                 YEAR(date) AS year
             FROM
@@ -74,6 +72,12 @@ with DAG(
                 SELECT date FROM bronze_unemployment_rate
                 UNION ALL
                 SELECT date FROM bronze_wheat
+                UNION ALL
+                SELECT time_published FROM silver_news
             ) AS all_dates;
+
+
+            SELECT * FROM calendar
+
         """,
     )
