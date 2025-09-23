@@ -26,41 +26,52 @@ with DAG(
             DROP TABLE gold_economic_analysis
 
             SELECT
-                calendar.date,
+                calendar.month,
+                calendar.year,
                 calendar.date_id,
-                MAX(CASE WHEN agro.name = 'Global Price of Coffee' THEN agro.value ELSE NULL END) AS coffee_price,
-                MAX(CASE WHEN agro.name = 'Global Price of Sugar' THEN agro.value ELSE NULL END) AS sugar_price,
-                MAX(CASE WHEN agro.name = 'Global Price of Wheat' THEN agro.value ELSE NULL END) AS wheat_price,
-                MAX(CASE WHEN agro.name = 'Global Price of Cotton' THEN agro.value ELSE NULL END) AS cotton_price,
-                MAX(CASE WHEN economy.name = 'Effective Federal Funds Rate' THEN economy.value ELSE NULL END) AS federal_funds_rate,
-                MAX(CASE WHEN economy.name = 'Advance Retail Sales: Retail Trade' THEN economy.value ELSE NULL END) AS retail_trade,
-                MAX(CASE WHEN economy.name = 'Consumer Price Index for all Urban Consumers' THEN economy.value ELSE NULL END) AS consumor_price_index,
-                MAX(CASE WHEN fuel.name = 'Crude Oil Prices Brent' THEN fuel.value ELSE NULL END) AS oil_brent,
-                MAX(CASE WHEN fuel.name = 'Crude Oil Prices WTI' THEN fuel.value ELSE NULL END) AS oil_WTI,
-                MAX(CASE WHEN fuel.name = 'Henry Hub Natural Gas Spot Price' THEN fuel.value ELSE NULL END) AS natural_gas,
-                MAX(CASE WHEN state.name = '10-Year Treasury Constant Maturity Rate' THEN state.value ELSE NULL END) AS treasury,
-                MAX(CASE WHEN state.name = 'Unemployment Rate' THEN state.value ELSE NULL END) AS unemployment_rate,
-                LAST_VALUE(MAX(CASE WHEN state.name = 'Real Gross Domestic Product' THEN state.value ELSE NULL END)) IGNORE NULLS OVER (ORDER BY calendar.date) AS real_gross_domestic_product,
-                LAST_VALUE(MAX(CASE WHEN state.name = 'Real Gross Domestic Product per Capita' THEN state.value ELSE NULL END)) IGNORE NULLS OVER (ORDER BY calendar.date) AS real_gross_domestic_product_per_capita
+                MAX(CASE WHEN agro.name = 'Global Price of Coffee' THEN agro.value END) AS coffee_price_cents_per_pound,
+                MAX(CASE WHEN agro.name = 'Global Price of Sugar' THEN agro.value END) AS sugar_price_cents_per_pound,
+                MAX(CASE WHEN agro.name = 'Global Price of Wheat' THEN agro.value END) AS wheat_price_cents_per_pound,
+                MAX(CASE WHEN agro.name = 'Global Price of Cotton' THEN agro.value END) AS cotton_price_dollar_per_metric_ton,
+                MAX(CASE WHEN economy.name = 'Effective Federal Funds Rate' THEN economy.value END) AS federal_funds_rate_percent,
+                MAX(CASE WHEN economy.name = 'Advance Retail Sales: Retail Trade' THEN economy.value END) AS retail_trade_millions_of_dollars,
+                MAX(CASE WHEN economy.name = 'Consumer Price Index for all Urban Consumers' THEN economy.value END) AS [consumor_price_index_index_1982_1984_100],
+                MAX(CASE WHEN fuel.name = 'Crude Oil Prices Brent' THEN fuel.value END) AS oil_brent_dollars_per_barrel,
+                MAX(CASE WHEN fuel.name = 'Crude Oil Prices WTI' THEN fuel.value END) AS oil_WTI_dollars_per_barrel,
+                MAX(CASE WHEN fuel.name = 'Henry Hub Natural Gas Spot Price' THEN fuel.value END) AS natural_gas_dollars_per_million_BTU,
+                MAX(CASE WHEN state.name = '10-Year Treasury Constant Maturity Rate' THEN state.value END) AS treasury_percent,
+                MAX(CASE WHEN state.name = 'Unemployment Rate' THEN state.value END) AS unemployment_rate_percent,
+                MAX(CASE WHEN state.name = 'Real Gross Domestic Product' THEN state.value END) AS real_gross_domestic_product_billions_of_dollars,
+                MAX(CASE WHEN state.name = 'Real Gross Domestic Product per Capita' THEN state.value END) AS real_gross_domestic_product_per_capita_chained_2012_dollars,
+                MAX(CASE WHEN mineral.name = 'Global Price of Aluminum' THEN mineral.value END) AS Aluminium_dollar_per_metric_ton,
+                MAX(CASE WHEN mineral.name = 'Global Price of Copper' THEN mineral.value END) AS Copper_dollar_per_metric_ton
             INTO gold_economic_analysis
-            FROM
-                silver_agro as agro
+            FROM silver_agro AS agro
             LEFT JOIN silver_economy AS economy
-            ON agro.date = economy.date
-            LEFT JOIN silver_fuel as fuel
-            ON agro.date = fuel.date
+                ON YEAR(agro.date) = YEAR(economy.date)
+            AND MONTH(agro.date) = MONTH(economy.date)
+            LEFT JOIN silver_fuel AS fuel
+                ON YEAR(agro.date) = YEAR(fuel.date)
+            AND MONTH(agro.date) = MONTH(fuel.date)
             LEFT JOIN calendar
-            ON calendar.date = agro.date
-            LEFT JOIN silver_state_index as state
-            ON calendar.date = state.date
+                ON YEAR(agro.date) = calendar.year
+            AND MONTH(agro.date) = calendar.month
+            LEFT JOIN silver_state_index AS state
+                ON calendar.year = YEAR(state.date)
+            AND calendar.month = MONTH(state.date)
+            LEFT JOIN silver_mineral AS mineral
+                ON calendar.year = YEAR(mineral.date)
+            AND calendar.month = MONTH(mineral.date)
             GROUP BY
-                calendar.date,
-                calendar.date_id
+                calendar.date_id,
+                calendar.month,
+                calendar.year
             ORDER BY
-                calendar.date DESC;
+                calendar.month desc;
+
 
 
             SELECT * FROM gold_economic_analysis
-            ORDER BY date desc
-        """,
+            ORDER BY year desc
+                    """,
     )
